@@ -29,7 +29,7 @@ class NumberContent extends StatelessWidget {
             if (_firstPageShouldStick(context)) _buildPageButton(context, 0),
             if (_frontDotsShouldShow(context, availableSpots))
               _buildDots(context),
-            ..._generateButtonList(context, availableSpots),
+            ..._generateCenterButtonList(context, availableSpots),
             if (_backDotsShouldShow(context, availableSpots))
               _buildDots(context),
             if (_lastPageShouldStick(context))
@@ -43,7 +43,8 @@ class NumberContent extends StatelessWidget {
 
   /// Generates the variable button list which is at the center of the (optional)
   /// dots. The very last and first pages are shown independently of this list.
-  List<Widget> _generateButtonList(BuildContext context, int availableSpots) {
+  List<Widget> _generateCenterButtonList(
+      BuildContext context, int availableSpots) {
     // if dots shown: available minus (2 for first and last pages + 2 for dots)
     var shownPages = availableSpots -
         (_firstPageShouldStick(context) ? 1 : 0) -
@@ -118,13 +119,12 @@ class NumberContent extends StatelessWidget {
       availableSpots < InheritedNumberPaginator.of(context).numberPages &&
       currentPage <
           InheritedNumberPaginator.of(context).numberPages -
-              availableSpots ~/ 2 -
-              1;
+              availableSpots ~/ 2;
 
   bool _frontDotsShouldShow(BuildContext context, int availableSpots) =>
       _firstPageShouldStick(context) &&
       availableSpots < InheritedNumberPaginator.of(context).numberPages &&
-      currentPage > availableSpots ~/ 2;
+      currentPage > availableSpots ~/ 2 - 1;
 
   /// Checks if the given index is currently selected.
   bool _selected(index) => index == currentPage;

@@ -39,7 +39,7 @@ class _NumbersPageState extends State<NumbersPage> {
             });
           },
           config: const NumberPaginatorUIConfig(
-              dotsVisibility: DotsVisibility.none),
+              dotsVisibility: DotsVisibility.bothDots),
         ),
       ),
     );
