@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:number_paginator/src/model/display_mode.dart';
+import 'package:number_paginator/src/model/constants.dart';
 import 'package:number_paginator/src/ui/widgets/inherited_number_paginator.dart';
 import 'package:number_paginator/src/ui/widgets/paginator_content/dropdown_content.dart';
 import 'package:number_paginator/src/ui/widgets/paginator_content/number_content.dart';

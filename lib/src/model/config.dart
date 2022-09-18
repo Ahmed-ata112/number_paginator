@@ -44,6 +44,11 @@ class NumberPaginatorUIConfig {
   /// content.
   final EdgeInsets? contentPadding;
 
+  /// The [DotsVisibility] for the dots that are shown to indicate that there are
+  /// more pages than the ones shown.
+  /// Defaults to [DotsVisibility.bothDots].
+  final DotsVisibility dotsVisibility;
+
   const NumberPaginatorUIConfig({
     this.height = 48.0,
     this.buttonShape,
@@ -53,6 +58,7 @@ class NumberPaginatorUIConfig {
     this.buttonUnselectedBackgroundColor,
     this.mode = ContentDisplayMode.numbers,
     this.mainAxisAlignment = MainAxisAlignment.start,
+    this.dotsVisibility = DotsVisibility.bothDots,
     this.contentPadding,
   });
 }

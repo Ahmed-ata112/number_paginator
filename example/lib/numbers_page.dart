@@ -9,7 +9,7 @@ class NumbersPage extends StatefulWidget {
 }
 
 class _NumbersPageState extends State<NumbersPage> {
-  final int _numPages = 100;
+  final int _numPages = 30;
   int _currentPage = 0;
 
   @override
@@ -38,6 +38,8 @@ class _NumbersPageState extends State<NumbersPage> {
               _currentPage = index;
             });
           },
+          config: const NumberPaginatorUIConfig(
+              dotsVisibility: DotsVisibility.none),
         ),
       ),
     );
